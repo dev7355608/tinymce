@@ -1,5 +1,6 @@
 Version 5.7.0 (TBD)
     Changed the `advlist` plugin to log a console error message when the `list` plugin isn't enabled #TINY-6585
+    Fixed an issue where `scope` attributes on table cells would not change as expected when merging or unmerging cells #TINY-6486
 Version 5.6.1 (TBD)
     Fixed the `mceTableRowType` and `mceTableCellType` commands not firing `newCell` event #TINY-6692
     Fixed the HTML5 `s` element not recognized when editing or clearing text formatting #TINY-6681
