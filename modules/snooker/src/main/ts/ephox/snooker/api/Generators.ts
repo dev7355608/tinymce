@@ -189,7 +189,7 @@ const merging = (generators: Generators) => {
       const stringAttributes = Optionals.cat(attributeOpts);
 
       if (stringAttributes.length === 0) {
-        return Optional.none();
+        return Optional.none<string>();
       } else {
         const baseScope = stringAttributes[0];
         const scopes = [ 'row', 'col' ];
@@ -197,7 +197,8 @@ const merging = (generators: Generators) => {
         const isMixed = Arr.exists(stringAttributes, (attribute) => {
           return attribute !== baseScope && Arr.contains(scopes, attribute);
         });
-        return Optional.from(isMixed ? 'col' : baseScope);
+
+        return isMixed ? Optional.none<string>() : Optional.from(baseScope);
       }
     };
 
@@ -205,9 +206,13 @@ const merging = (generators: Generators) => {
 
     const scope = getScopeProperty();
 
-    scope.each((attribute) =>
-      Attribute.set(cells[0], 'scope', attribute + 'group')
-    );
+    if (scope.isSome()) {
+      scope.each((attribute) =>
+        Attribute.set(cells[0], 'scope', attribute + 'group')
+      );
+    } else {
+      Attribute.remove(cells[0], 'scope');
+    }
 
     return Fun.constant(cells[0]);
   };
