@@ -89,7 +89,7 @@ UnitTest.test('MergeOperationsTest', function () {
     '<table style="border-collapse: collapse;">' +
       '<tbody>' +
         '<tr>' +
-          '<td ' + (isIE ? 'rowspan="2" scope="rowgroup"' : 'scope="rowgroup" rowspan="2"') + '>A1<br>A2<br></td>' +
+          '<td rowspan="2" scope="rowgroup">A1<br>A2<br></td>' +
           '<td>B1</td>' +
           '<td>C1</td>' +
         '</tr>' +
@@ -127,7 +127,7 @@ UnitTest.test('MergeOperationsTest', function () {
     '<table style="border-collapse: collapse;">' +
       '<tbody>' +
         '<tr>' +
-          '<td ' + (isIE ? 'rowspan="2" scope="colgroup"' : 'scope="colgroup" rowspan="2"') + '>A1<br>A2<br></td>' +
+          '<td rowspan="2">A1<br>A2<br></td>' +
           '<td>B1</td>' +
           '<td>C1</td>' +
         '</tr>' +
@@ -165,7 +165,7 @@ UnitTest.test('MergeOperationsTest', function () {
     '<table style="border-collapse: collapse;">' +
       '<tbody>' +
         '<tr>' +
-          '<td ' + (isIE ? 'rowspan="2" scope="colgroup"' : 'scope="colgroup" rowspan="2"') + '>A1<br>A2<br></td>' +
+          '<td rowspan="2">A1<br>A2<br></td>' +
           '<td>B1</td>' +
           '<td>C1</td>' +
         '</tr>' +
