@@ -1,8 +1,5 @@
 import { UnitTest } from '@ephox/bedrock-client';
-import { PlatformDetection } from '@ephox/sand';
 import * as Assertions from 'ephox/snooker/test/Assertions';
-
-const isIE = PlatformDetection.detect().browser.isIE();
 
 UnitTest.test('MergeOperationsTest', function () {
   Assertions.checkMerge(
